@@ -4,18 +4,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Project: Gooiki</title>
+    //Firebase
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    //Jquery
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body> 
-    
+    // Making a div for the input bar to upload image to be serached.
 <div id="filesubmit">
     <input type="file" class="file-select" accept="image/*"/>
     <button class="file-submit">SUBMIT</button>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    //Javascript part
 <script>
   // Initialize Firebase
   var config = {
@@ -27,10 +30,11 @@
     messagingSenderId: "1076296379594"
   };
   firebase.initializeApp(config);
-
+   // Definition of variables
+    
   const storageService = firebase.storage();
   const storageRef = storageService.ref();
-
+   //Select and add an event
   document.querySelector('.file-select').addEventListener("change", handleFileUploadChange);
   document.querySelector('.file-submit').addEventListener("click", handleFileUploadSubmit);
 
